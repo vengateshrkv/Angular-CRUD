@@ -1,0 +1,21 @@
+<div>
+<!-- <a routerLink = '/mobiles'>Add Mobiles</a> -->
+<app-mobiles></app-mobiles>
+<div>
+  <table border=1>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Delete Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of products'>
+        <td>{{product.name}}</td>
+        <td>{{product.color}}</td>
+        <td (click)="deleteMobile(product.id)">DELETE</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

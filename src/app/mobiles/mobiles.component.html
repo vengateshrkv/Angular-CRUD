@@ -1,0 +1,10 @@
+<!-- <a routerLink='/'> < Back</a> -->
+<form (ngSubmit)="submitForm(mobileData.value)" #mobileData="ngForm">
+    <label>Name:</label>
+    <input type="text" name="name" ngModel placeholder="Mobile Name"/>
+    <label>Color:</label>
+    <input type="text" name="color" ngModel placeholder="Mobile Color"/>
+    <input type="submit" value="submit"/>
+</form>
+<hr/>
+<h2 *ngIf = "formStatus">{{successData}}</h2>
