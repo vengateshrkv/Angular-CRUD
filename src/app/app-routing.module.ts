@@ -7,7 +7,7 @@ import { MobilesComponent } from 'src/app/mobiles/mobiles.component'
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: MobilesComponent
   },
   {
     path: 'mobiles',

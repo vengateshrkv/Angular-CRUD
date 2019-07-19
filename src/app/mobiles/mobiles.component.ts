@@ -14,14 +14,22 @@ export class MobilesComponent implements OnInit {
   constructor(private http: HttpClient, private mobile: MobileService) { }
   formStatus:boolean= false;
   successData:string = "Form submitted Successfully"
+  product:object = {}
 
   ngOnInit() {
   }
-  submitForm(formData){
-    console.log("form submitted", formData);
-    this.mobile.submitForm(formData).subscribe(data => {
+  updateProduct(event) {
+    this.product = Object.assign({},event);
+  }
+  submitForm(){
+    this.formStatus = false;
+    this.mobile.submitForm(this.product).subscribe(data => {
      this.formStatus = true;
+     this.product = {}
     })
+    // this.http.post('http://localhost:5555/products', formData).subscribe((res: HttpResponse<Employee[]>) => {
+    // })
+    
   }
 
 }

@@ -1,0 +1,11 @@
+.invalid-msg {
+    font-size: 12px;
+    color:red;
+}
+.form-control {
+    padding: 5px;
+    margin: 10px;
+}
+.is-valid {
+    border: 1px solid red;
+}

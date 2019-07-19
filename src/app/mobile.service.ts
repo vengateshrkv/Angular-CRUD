@@ -17,7 +17,13 @@ export class MobileService {
   }
 
   submitForm(formData){
+    console.log(formData)
+    if(formData.id) {
+      const url = `http://localhost:5555/products/${formData.id}`;
+      return this.http.put(url, formData);
+    } else {
       return this.http.post('http://localhost:5555/products', formData);
+    }
     // this.http.post('http://localhost:5555/products', formData).subscribe((res: HttpResponse<Employee[]>) => {
     // })
   }

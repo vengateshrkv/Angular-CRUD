@@ -1,10 +1,22 @@
 <!-- <a routerLink='/'> < Back</a> -->
-<form (ngSubmit)="submitForm(mobileData.value)" #mobileData="ngForm">
+<form (ngSubmit)="f.form.valid && submitForm()" #f="ngForm" novalidate name="form">
+  <div>
     <label>Name:</label>
-    <input type="text" name="name" ngModel placeholder="Mobile Name"/>
+    <input type="text" name="name" [(ngModel)]="product.name" #name="ngModel" 
+    placeholder="Mobile Name" class="form-control"  [ngClass]="{'is-valid': f.submitted && name.invalid}" required/>
+    <div *ngIf="name.invalid && name.touched" class="invalid-msg">Name is Required</div>
+  </div>
+  <div>
     <label>Color:</label>
-    <input type="text" name="color" ngModel placeholder="Mobile Color"/>
-    <input type="submit" value="submit"/>
+    <input type="text" name="color" class="form-control" [(ngModel)]="product.color"
+     [ngClass]="{'is-valid': f.submitted && color.invalid }"
+     #color="ngModel" placeholder="Mobile Color" required/>
+    <div *ngIf="color.invalid && color.touched" class="invalid-msg" >Color is Required</div>
+  </div>
+    <input [disabled]='f.form.invalid' type="submit" value="submit"/>
+
 </form>
 <hr/>
 <h2 *ngIf = "formStatus">{{successData}}</h2>
+
+<app-home [formStatus]='formStatus' (valueChange)='updateProduct($event)'></app-home>

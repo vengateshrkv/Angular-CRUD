@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MobilesComponent } from './mobiles/mobiles.component';
-import { UpdateMobileComponent } from './update-mobile/update-mobile.component';
 
 import { MobileService } from './mobile.service'
 
@@ -17,7 +16,6 @@ import { MobileService } from './mobile.service'
     AppComponent,
     HomeComponent,
     MobilesComponent,
-    UpdateMobileComponent
   ],
   imports: [
     BrowserModule,
